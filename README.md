@@ -2,7 +2,7 @@
     Scrapes url for tables matching dictionary, default attributes are empty using requests and BeautifulSoup. \n
     Prints in a neat, easy to see way
 
-    Example usage:
+##    Example usage:
     >>> from HTMLtableScraper import tableScraper
     >>> tableScraper('https://www.w3schools.com/html/html_tables.asp', {"id": "customers"})
     >>> Status code: 200
