@@ -8,19 +8,20 @@ print('Status code:', page.status_code)
 src = page.content
 
 soup = bs(src, 'lxml')
-table = bs.find('table')
+table = soup.find('table')
 
 # Makes a 2D list of the table
 info = []
 row = 0
 for tr in table.find_all('tr'):
     info.append([])
-    if tr.find_all('td') == []:
+    tabledata = tr.find_all('td')
+    if tabledata == []:
         for th in tr.find_all('th'):
             info[row].append(th.text)
         row = row + 1
         continue
-    for td in tr.find_all('td'):
+    for td in tabledata:
         info[row].append(td.text)
     row = row + 1
 
