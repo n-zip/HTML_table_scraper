@@ -1,5 +1,5 @@
 import requests
-from bs4 import BeautifulSoup as soup
+from bs4 import BeautifulSoup as bs
 
 page = requests.get('https://www.w3schools.com/html/html_tables.asp')
 
@@ -7,8 +7,8 @@ print('Status code:', page.status_code)
 
 src = page.content
 
-soup = soup(src, 'lxml')
-table = soup.find('table')
+soup = bs(src, 'lxml')
+table = bs.find('table')
 
 # Makes a 2D list of the table
 info = []
