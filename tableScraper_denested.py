@@ -31,7 +31,10 @@ def listMaker(row: int, tr: bs, table2D: list):
         table2D[row].append(td.text)
 
     return row + 1
-
+def longestStr(tr: bs, maxLen: list):
+    for column, td in enumerate(tr):
+        maxLen.append(0)
+        if len(td) > maxLen[column]: maxLen[column] = len(td)
 #----------------------------------------------------------
 
 #Main function
@@ -57,9 +60,7 @@ def tableScraper(url: str, atrrs: dict):
         # Gets longest str for each cloumn
         maxLen = []
         for tr in table2D:
-            for column, td in enumerate(tr):
-                maxLen.append(0)
-                if len(td) > maxLen[column]: maxLen[column] = len(td)
+            longestStr(tr, maxLen)
 
         # Extends all strings in each column to be the same length
         for row, tr in enumerate(table2D):
