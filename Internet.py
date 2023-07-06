@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as bs
 
 page = requests.get('https://www.w3schools.com/html/html_tables.asp')
 
-print('Status code:', page.status_code)
+print('\nStatus code:', page.status_code, end="\n\n")
 
 src = page.content
 
@@ -37,3 +37,4 @@ for row, tr in enumerate(info):
     for column, td in enumerate(tr):
         info[row][column] = td + ' ' * (maxLen[column] - len(td))
     print(' | '.join(tr))
+print()
