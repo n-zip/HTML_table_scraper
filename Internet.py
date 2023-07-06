@@ -8,7 +8,7 @@ print('Status code:', page.status_code)
 src = page.content
 
 soup = bs(src, 'lxml')
-table = soup.find('table')
+table = soup.find('table', attrs={})
 
 # Makes a 2D list of the table
 info = []
