@@ -1,5 +1,5 @@
 # HTML-table-scraper
-    Scrapes url for tables matching dictionary, default attributes empty using requests and BeautifulSoup. \n
+    Scrapes url for tables matching dictionary, default attributes are empty using requests and BeautifulSoup. \n
     Prints in a neat, easy to see way
 
     Example usage:
