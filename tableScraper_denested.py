@@ -4,16 +4,6 @@ from bs4 import BeautifulSoup as bs
 #Denester functions
 #----------------------------------------------------------
 
-def tableRow(y: int, tr: list, table2D: list, maxLen: list):
-    '''
-    Makes each table row right size and prints it
-    '''
-
-    for x, td in enumerate(tr):
-        table2D[y][x] = td + ' ' * (maxLen[x] - len(td))
-
-    print(' | '.join(tr))
-
 def listMaker(row: int, tr: bs, table2D: list):
     '''
     Makes the 2D list for a table
@@ -25,21 +15,42 @@ def listMaker(row: int, tr: bs, table2D: list):
     if tabledata == []:
         for th in tr.find_all('th'):
             table2D[row].append(th.text)
+
         return row + 1
     
     for td in tabledata:
         table2D[row].append(td.text)
 
     return row + 1
+
 def longestStr(tr: bs, maxLen: list):
+    '''
+    Finds longest str in each tr and updates the list
+    '''
+
     for column, td in enumerate(tr):
         maxLen.append(0)
         if len(td) > maxLen[column]: maxLen[column] = len(td)
+
+def tableRow(y: int, tr: list, table2D: list, maxLen: list):
+    '''
+    Makes each table row right size and prints it
+    '''
+
+    for x, td in enumerate(tr):
+        table2D[y][x] = td + ' ' * (maxLen[x] - len(td))
+
+    print(' | '.join(tr))
+
 #----------------------------------------------------------
 
 #Main function
 #----------------------------------------------------------
 def tableScraper(url: str, atrrs: dict):
+    '''
+    Scrapes url parameter for tables matching attrs dictionary using requests and BeautifulSoup
+
+    '''
     page = requests.get(url)
 
     print('\nStatus code:', page.status_code, end="\n\n")
