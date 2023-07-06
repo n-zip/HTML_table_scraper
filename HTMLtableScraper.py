@@ -46,7 +46,7 @@ def _tableRow(y: int, tr: list, table2D: list, maxLen: list):
 
 #Main function
 #----------------------------------------------------------
-def tableScraper(url: str, attributes = {}):
+def tableScraper(url: str, attributes: dict = {}):
     '''
     Scrapes url for tables matching dictionary, default attributes empty using requests and BeautifulSoup. \n
     Prints in a neat, easy to see way
