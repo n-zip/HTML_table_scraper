@@ -1,4 +1,5 @@
 # HTML-table-scraper
+    Requires requests and bs4 packages.
     Scrapes url for tables matching dictionary, default attributes are empty using requests and BeautifulSoup. \n
     Prints in a neat, easy to see way
 
