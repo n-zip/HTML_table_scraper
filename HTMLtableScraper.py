@@ -100,3 +100,8 @@ def tableScraper(url: str, attributes: dict = {}):
         print()
 
 #----------------------------------------------------------
+
+
+#----------------------------------------------------------
+if __name__ == '__main__':
+    tableScraper('https://www.w3schools.com/html/html_tables.asp')
