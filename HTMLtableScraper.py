@@ -83,7 +83,6 @@ def tableScraper(url: str, attributes: dict = {}):
     if tables == []:
         print("No tables found!")
 
-    # Makes a 2D list of each table and prints the whole table
     for index in range(len(tables)):
         table2D = []
         row = 0
@@ -91,12 +90,10 @@ def tableScraper(url: str, attributes: dict = {}):
         for tr in tables[index].find_all('tr'):
             row = _listMaker(row, tr, table2D)
 
-        # Gets longest str for each cloumn
         maxLen = []
         for tr in table2D:
             _longestStr(tr, maxLen)
 
-        # Extends all strings in each column to be the same length
         for row, tr in enumerate(table2D):
             _tableRow(row, tr, table2D, maxLen)
         print()
