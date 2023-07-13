@@ -74,7 +74,7 @@ def tableScraper(url: str, attributes: dict = {}):
 
     page = requests.get(url)
 
-    print('\nStatus code:', page.status_code, end="\n\n")
+    print(f'\nStatus code: {page.status_code}', end="\n\n")
 
     src = page.content
 
