@@ -46,6 +46,7 @@ def _tableRow(y: int, tr: list, table2D: list, maxLen: list):
 
 #Main function
 #----------------------------------------------------------
+
 def tableScraper(url: str, attributes: dict = {}):
     '''
     Requires requests and bs4 packages.
@@ -101,7 +102,9 @@ def tableScraper(url: str, attributes: dict = {}):
 
 #----------------------------------------------------------
 
-
 #----------------------------------------------------------
+
 if __name__ == '__main__':
     tableScraper('https://www.w3schools.com/html/html_tables.asp')
+
+#----------------------------------------------------------
