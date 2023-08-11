@@ -58,13 +58,13 @@ def tableScraper(url: str, attributes: dict = {}):
     >>> tableScraper('https://www.w3schools.com/html/html_tables.asp', {"id": "customers"})
     >>> Status code: 200
 
-            Company                      | Contact          | Country\n
-            Alfreds Futterkiste          | Maria Anders     | Germany\n
-            Centro comercial Moctezuma   | Francisco Chang  | Mexico\n
-            Ernst Handel                 | Roland Mendel    | Austria\n
-            Island Trading               | Helen Bennett    | UK\n
-            Laughing Bacchus Winecellars | Yoshi Tannamuri  | Canada\n
-            Magazzini Alimentari Riuniti | Giovanni Rovelli | Italy\n
+            Company                      | Contact          | Country   \n
+            Alfreds Futterkiste          | Maria Anders     | Germany   \n
+            Centro comercial Moctezuma   | Francisco Chang  | Mexico    \n
+            Ernst Handel                 | Roland Mendel    | Austria   \n
+            Island Trading               | Helen Bennett    | UK        \n
+            Laughing Bacchus Winecellars | Yoshi Tannamuri  | Canada    \n
+            Magazzini Alimentari Riuniti | Giovanni Rovelli | Italy     \n
     '''
 
     if type(url) is not str:
@@ -75,7 +75,7 @@ def tableScraper(url: str, attributes: dict = {}):
 
     page = requests.get(url)
 
-    print(f'\nStatus code: {page.status_code}', end="\n\n")
+    print(f'\nStatus code: {page.status_code}\n')
 
     src = page.content
 
